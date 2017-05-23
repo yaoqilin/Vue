@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--ng-click 这种-->
+    <p v-on:click="post">我是绑定事件的元素</p>
+</div>
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el:'#app',
+        //数据写在data里面
+        data:{},
+        //方法写在methods里面
+        methods:{
+            post:function(){
+                alert(1);
+            }
+        }
+    })
+</script>

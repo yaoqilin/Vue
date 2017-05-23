@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <todo-item todo='jack'></todo-item>
+        <todo-item todo='rose'></todo-item>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    //组件的声明使用Vue.component
+    Vue.component('todo-item',{
+        //组件内部传值通过props来传值
+        props:['todo'],
+        template:"<li>我是{{todo}}代办的事项</li>"
+    })
+    var app = new Vue({
+        el:"#app"
+    })
+
+</script>

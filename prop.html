@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父组件向子组件传值</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message">
+    <child v-bind:auto="message"></child>
+</div>
+</body>
+</html>
+<script>
+    Vue.component('child',{
+        props:['auto'],
+        template:'<span>{{auto}}</span>'
+    })
+    var app = new Vue({
+        el:'#app',
+        data:{
+            message:''
+        }
+    })
+</script>

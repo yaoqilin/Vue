@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定class</title>
+    <script src="vue.min.js"></script>
+    <style>
+        .active {
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-bind:class="{active:isActive}">html5</li>
+        <!--<li class="active">html5</li>-->
+        <!--<li>html5</li>-->
+        <li v-bind:style="{color:color,fontSize:fontSize + 'px'}">css3</li>
+        <li>javascript</li>
+    </ul>
+    <!--v-if-->
+    <div v-if="false">
+        我是显示的内容
+    </div>
+    <div v-else>
+        我是不显示的内容
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            isActive:false,
+            color:'blue',
+            fontSize:30
+        }
+    })
+</script>

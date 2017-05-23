@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+    <!--引入vue的文件-->
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <!--ng-bind来绑定数据-->
+    <span v-bind:title="message">鼠标放上去，显示文本内容</span>
+</div>
+</body>
+</html>
+<script>
+    //通过new Vue启动Vue,在angularJS中使用angular.module()
+    var app = new Vue({
+        //Vue启动的DOM元素
+        // ng-app指令完成的
+        el:'#app',
+        //用于声明变量
+        data:{
+            message:"Hello world" // $scope.数据
+        }
+    })
+
+</script>
