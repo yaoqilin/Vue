@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子组件向父组件传值</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <template>
+        <div>
+            <h2>子组件部分</h2>
+            <p>{{message}}</p>
+            <button v-on:click="toParent"></button>
+        </div>
+    </template>
+</div>
+</body>
+</html>
+<script>
+    Vue.component({
+        props:['message'],
+        methods:{
+            toParent:function () {
+                this.$emit("这个消息从子组件发出")
+            }
+        }
+    });
+    var app = new Vue({
+        el:'#app',
+        data:{
+
+        }
+    })
+</script>
